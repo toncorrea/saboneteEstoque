@@ -9,6 +9,8 @@ router.get('/', function(req, res, next) {
   });
 });
 
+//------------ Rotas Materia Prima -----------
+
 router.get('/materiaprima', function(req, res, next){
   res.render('materiaprima', {
     title: 'Materia Prima',
@@ -32,24 +34,23 @@ router.post('/salvar', function(req, res, next) {
   res.redirect('/materiaprima');
 });
 
+//lista de todas as materias primas registradas
 router.get('/materiaprima/listamaterias', function(req, res, next){
   materias = MateriaPrima.dados;
+  quantidade = MateriaPrima.quantidade();
   res.render('listamateria', {
     title: 'Materias Primas',
-    materias: materias
+    materias: materias,
+    quantidade: quantidade
   });
 });
-
+//edição das materias primas
 router.get('/materiaprima/editar', function(req, res, next){
   var materia = MateriaPrima.buscarPorId(req.query.id);
-  //var materia == c / do buscarPorId
-  //materia.id == 4
   var materias = MateriaPrima.dados;
-  //var materias == array MateriaPrima.dados.
   res.render('materiaeditar', {
     title: 'Materias Primas',
     materias: materias,
-    //materia == c
     materia: materia
   })
 })
@@ -58,6 +59,14 @@ router.get('/materiaprima/excluir', function(req, res, next){
   MateriaPrima.excluir(req.query.id);
   console.log(req.query.id);
   res.redirect('/materiaprima/listamaterias');
+});
+
+// -------------- Rotas Produto ---------------
+
+router.get('/materiaprima', function(req, res, next){
+  res.render('materiaprima', {
+    title: 'Materia Prima',
+  });
 });
 
 module.exports = router;

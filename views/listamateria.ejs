@@ -3,10 +3,21 @@
   <head>
     <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script type="text/javascript">
+      function menuPrincipal(){
+        window.location = "/"
+      }
+      function salvarMaterias(){
+        window.location = "/materiaprima"
+      }
+    </script>
   </head>
   <body>
+    <input type="button" onclick="menuPrincipal()" value="Menu Principal"><br>
+    <input type="button" onclick="salvarMaterias()" value="<<"><br><br><br>
 
-    <h1>Lista das Materias Primas salvas</h1>
+    <h1>Registro de Materias Primas</h1>
+    <p>Há <%= quantidade %> registro(s)</p>
     <table id="materias" border="1">
       <% if(materias.length > 0){ %>
       <tr>

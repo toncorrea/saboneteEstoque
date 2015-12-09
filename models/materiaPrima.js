@@ -43,4 +43,9 @@ MateriaPrima.excluir = function(id){
   MateriaPrima.dados = backup;
 }
 
+MateriaPrima.quantidade = function(){
+  var c = MateriaPrima.dados.length
+  return c;
+}
+
 module.exports = MateriaPrima;

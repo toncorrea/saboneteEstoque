@@ -4,12 +4,15 @@
     <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
     <script type="text/javascript">
+    function menuPrincipal(){
+        window.location = "/"
+      }
     </script>
   </head>
   <body>
-    <input type="button" onclick="todasAsMateriasPrimas()" value="Lista de Materias"><br><br>
+    <input type="button" onclick="menuPrincipal()" value="Menu Principal"><br><br><br><br>
+
     <form action="/salvar" method="post">
-      <h1>MATERIA PRIMA</h1>
       NOME: <br>
       <input type="text" name="nomeMP" id="nomeMP" value="<%= materia.nome %>" required><br><br>
       <!-- materia.nome == c.nome -->

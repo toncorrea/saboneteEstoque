@@ -7,12 +7,16 @@
       function todasAsMateriasPrimas(){
         window.location = "/materiaprima/listamaterias"
       }
+      function menuPrincipal(){
+        window.location = "/"
+      }
     </script>
   </head>
   <body>
+    <input type="button" onclick="menuPrincipal()" value="Menu Principal"><br><br><br><br>
     <input type="button" onclick="todasAsMateriasPrimas()" value="Lista de Materias"><br><br>
     <form action="/salvar" method="post">
-      <h1>MATERIA PRIMA</h1>
+      <h1>Registrar Materia Prima</h1>
       NOME: <br>
       <input type="text" name="nomeMP" id="nomeMP" required><br><br> 
 
