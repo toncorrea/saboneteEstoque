@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script type="text/javascript">
+      function todasAsMateriasPrimas(){
+        window.location = "/materiaprima/listamaterias"
+      }
+    </script>
+  </head>
+  <body>
+    <input type="button" onclick="todasAsMateriasPrimas()" value="Lista de Materias"><br><br>
+    <form action="/salvar" method="post">
+      <h1>MATERIA PRIMA</h1>
+      NOME: <br>
+      <input type="text" name="nomeMP" id="nomeMP" required><br><br> 
+
+      <input type="hidden" name="idMP" id="idMP" required>
+      <!-- input idMP == "" -->
+      
+      PREÇO: <br>
+      <input type="text" name="precoMP" id="precoMP" required><br><br>
+      DESCRIÇÃO:<br>
+      <input type="text" name="descricaoMP" id="descricaoMP" required><br><br>
+      <input type="submit" value="salvar">
+  </form>
+  </body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script type="text/javascript">
+    </script>
+  </head>
+  <body>
+    <input type="button" onclick="todasAsMateriasPrimas()" value="Lista de Materias"><br><br>
+    <form action="/salvar" method="post">
+      <h1>MATERIA PRIMA</h1>
+      NOME: <br>
+      <input type="text" name="nomeMP" id="nomeMP" value="<%= materia.nome %>" required><br><br>
+      <!-- materia.nome == c.nome -->
+
+
+      <input type="hidden" name="idMP" id="idMP" value="<%= materia.id %>">
+      <!-- materia.id == c.id == 4 -->
+
+
+      PREÇO: <br>
+      <input type="text" name="precoMP" id="precoMP" value="<%= materia.preco %>" required><br><br>
+
+      DESCRIÇÃO:<br>
+      <input type="text" name="descricaoMP" id="descricaoMP" value="<%= materia.descricao %>" required><br><br>
+      <input type="submit" value="salvar">
+  </form>
+  </body>
+</html>

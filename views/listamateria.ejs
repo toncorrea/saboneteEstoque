@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+
+    <h1>Lista das Materias Primas salvas</h1>
+    <table id="materias" border="1">
+      <% if(materias.length > 0){ %>
+      <tr>
+        <td>Nome</td>
+        <td>Preço</td>
+        <td>Descrição</td>
+      </tr>
+      <% for(i=0; i<materias.length; i++){ %>
+        <% var a = materias[i]; %>
+      <tr>
+        <td><%= a.nome %></td>
+        <td><%= a.preco %></td>
+        <td><%= a.descricao %></td>
+        <td><a href="/materiaprima/editar?id=<%= a.id %>">Editar</a></td>
+        <td><a href="/materiaprima/excluir?id=<%= a.id %>">Excluir</a></td>
+      </tr>
+      <% } %>
+      <% } else { %>
+        Nenhum dado cadastrado
+    <% } %>
+  </table>
+  </body>
+</html>
